@@ -21,3 +21,5 @@
     {$title}
 </div>
 ```
+
+For more information visit https://github.com/google/incremental-dom/issues/96.
