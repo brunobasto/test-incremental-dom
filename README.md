@@ -11,3 +11,9 @@
     Hello world!
   {/msg}
 ```
+
+```
+<div id="title1" style="font-variant:small-caps" {bidiDirAttr($title)}>
+    {$title}
+</div>
+```
