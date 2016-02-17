@@ -5,6 +5,6 @@
     "closure-templates-incrementaldom": "0.0.1"
   },
   "scripts": {
-  	"compile": "java -jar node_modules/closure-templates-incrementaldom/SoyToIncrementalDomSrcCompiler.jar soy/*.soy --outputPathFormat \"{INPUT_DIRECTORY}{INPUT_FILE_NAME}.js\""
+  	"compile": "java -jar node_modules/closure-templates-incrementaldom/SoyToIncrementalDomSrcCompiler.jar soy/*.soy --outputPathFormat \"{INPUT_DIRECTORY}{INPUT_FILE_NAME}.js\" --compileTimeGlobalsFile globals.txt"
   }
 }
