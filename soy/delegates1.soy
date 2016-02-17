@@ -1,0 +1,20 @@
+{delpackage alpha}
+{namespace soy.examples.delegates.alpha autoescape="strict"}
+
+
+/**
+ * Delegate package 'alpha' implementation of 'delegateBoo'.
+ */
+{deltemplate delegateBoo kind="text"}
+  delegateBoo from delegate package alpha.
+{/deltemplate}
+
+
+/**
+ * Delegate package 'alpha' implementation of 'myDelegates.foo'.
+ * @param moo Note: Must list same params for all implementations, even if not all implementations
+ *     use a param.
+ */
+{deltemplate myDelegates.foo kind="text"}
+  myDelegates.foo from delegate package alpha (moo = {$moo}).
+{/deltemplate}
