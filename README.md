@@ -7,9 +7,9 @@
 # Unsupported Features
 
 ```
-  {msg desc="Says hello to the world."}
+{msg desc="Says hello to the world."}
     Hello world!
-  {/msg}
+{/msg}
 ```
 
 ```
