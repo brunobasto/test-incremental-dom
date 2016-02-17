@@ -1,4 +1,5 @@
 # Setup
 
-1) `npm install`
-2) `npm run compile`
+`npm install`
+
+`npm run compile`
