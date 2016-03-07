@@ -71,13 +71,13 @@ if (goog.DEBUG) {
  * @suppress {checkTypes}
  */
 function $helloNames(opt_data, opt_ignored, opt_ijData) {
-  var nameList272 = opt_data.names;
-  var nameListLen272 = nameList272.length;
-  if (nameListLen272 > 0) {
-    for (var nameIndex272 = 0; nameIndex272 < nameListLen272; nameIndex272++) {
-      var nameData272 = nameList272[nameIndex272];
-      $helloName({name: nameData272}, null, opt_ijData);
-      if (! (nameIndex272 == nameListLen272 - 1)) {
+  var nameList283 = opt_data.names;
+  var nameListLen283 = nameList283.length;
+  if (nameListLen283 > 0) {
+    for (var nameIndex283 = 0; nameIndex283 < nameListLen283; nameIndex283++) {
+      var nameData283 = nameList283[nameIndex283];
+      $helloName({name: nameData283}, null, opt_ijData);
+      if (! (nameIndex283 == nameListLen283 - 1)) {
         ie_open('br');
         ie_close('br');
       }

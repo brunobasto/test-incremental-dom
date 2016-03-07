@@ -22,4 +22,14 @@
 </div>
 ```
 
+3) Passing HTML to other templates
+
+```
+{call .template}
+  {param content kind="html"}
+    <div class="content">Foo</div>
+  {/param}
+{/call}
+```
+
 For more information visit https://github.com/google/incremental-dom/issues/96.

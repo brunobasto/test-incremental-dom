@@ -1,0 +1,21 @@
+{namespace soy.examples.htmlParam autoescape="strict"}
+
+/**
+ * @param foo
+ */
+{template .main}
+  {call .template}
+    {param content kind="html"}
+      <div class="content">{$foo}</div>
+    {/param}
+  {/call}
+{/template}
+
+/**
+ * @param content
+ */
+{template .template}
+  <div class="template">
+    {$content}
+  </div>
+{/template}
