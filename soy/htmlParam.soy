@@ -1,21 +1,50 @@
 {namespace soy.examples.htmlParam autoescape="strict"}
 
 /**
+ * Tries passing html content in three different ways to child templates. The
+ * first call different templates, but specifying on both that the param is html.
+ * The last call passes whatever the template receives directly to the template
+ * that expects an html param. This won't work with $foo is a string, which means
+ * that there's no way to pass pre-sanitized html strings to soy right now.
  * @param foo
  */
 {template .main}
-  {call .template}
+  {call .templateWithDocParam}
     {param content kind="html"}
       <div class="content">{$foo}</div>
     {/param}
   {/call}
+
+  {call .templateWithCommandParam}
+    {param content kind="html"}
+      <div class="content">{$foo}</div>
+    {/param}
+  {/call}
+
+  {call .templateWithCommandParam}
+    {param content: $foo /}
+  {/call}
 {/template}
 
 /**
+ * Declares content as a doc param. Since the type can't be specified this way,
+ * html content won't be rendered correctly.
  * @param content
  */
-{template .template}
-  <div class="template">
-    {$content}
-  </div>
+{template .templateWithDocParam}
+  <div class="template">{$content}</div>
+{/template}
+
+/**
+ * Declares content as an html param. Works when passing html strings that
+ * were built by other templates. Doesn't work if the template is called directly
+ * with a string, even though the compiled code seems to try to handle that case,
+ * transforming the string into a function. That function doesn't call any
+ * incremental dom function though, so nothing happens. Also, this function
+ * conversion happens through a directive to ClosureCompiler, which makes it
+ * required by anyone wanting to use soy + incremental dom.
+ */
+{template .templateWithCommandParam}
+	{@param content: html}
+  <div class="template">{$content}</div>
 {/template}
